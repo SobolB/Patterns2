@@ -62,9 +62,9 @@ public class AuthTest {
         var registeredUser  = getRegisteredUser ("active");
         var wrongLogin = getRandomLogin();
         $(  "(data-test-id='login'] input").setValue (wrongLogin);
-        $(  "(data-test-id='password'] input") .setValue (registeredUser.getPasswordOp;
+        $(  "(data-test-id='password'] input") .setValue (registeredUser.getPassword());
         $(  "button.button") .click();
-        $(  " (data-test-ids'error-notification' .notification__content")
+        $(  " (data-test-id='error-notification' .notification__content")
                 .shouldHave(Condition.text ("Ошибка! Неверно указан логин или пароль"))
                 .shouldBe((Condition.visible));
     }
