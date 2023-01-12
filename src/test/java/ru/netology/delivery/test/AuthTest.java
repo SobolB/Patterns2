@@ -14,7 +14,6 @@ import ru.netology.delivery.data.DataGenerator;
 
 import static com.codeborne.selenide.Selenide.$;
 import static io.restassured.RestAssured.given;
-import static java.nio.channels.FileChannel.open;
 
 public class AuthTest {
 
@@ -52,18 +51,6 @@ public class AuthTest {
         $(" [data-test-id='password'] input").setValue(blockedUser.getPassword());
         $("button.button").click();
         $(" (data-test-id='error-notification'] notification__content")
-                .shouldHave(Condition.text("Ошибка! Пользователь заблокирован"))
-                .shouldBe((Condition.visible));
-    }
-
-    @Test
-    @DisplayName("Should get error message if login with blocked registered user")
-    void shouldGetErrorIfBlockedUser() {
-        var blockedUser = getRegisteredUser("blocked");
-        $(" [data-test-id='login'] input").setValue(blockedUser.getLogin());
-        $(" (data-test-id=' password'] Input").setValue(blockedUser.getPassword());
-        $("button.button").click();
-        $(" (data-test-id='error-notification'] .notification__content")
                 .shouldHave(Condition.text("Ошибка! Пользователь заблокирован"))
                 .shouldBe((Condition.visible));
     }
