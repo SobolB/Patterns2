@@ -2,18 +2,12 @@ package ru.netology.delivery.test;
 
 
 import com.codeborne.selenide.Condition;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.filter.log.LogDetail;
-import io.restassured.http.ContentType;
-import io.restassured.specification.RequestSpecification;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.netology.delivery.data.DataGenerator;
+
 
 import static com.codeborne.selenide.Selenide.$;
-import static io.restassured.RestAssured.given;
 import static com.codeborne.selenide.Selenide.open;
 import static ru.netology.delivery.data.DataGenerator.Registration.getRegisteredUser;
 import static ru.netology.delivery.data.DataGenerator.Registration.getUser;
