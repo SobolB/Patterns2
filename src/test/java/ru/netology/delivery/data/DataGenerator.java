@@ -22,32 +22,32 @@ public class DataGenerator {
     private static final Faker faker = new Faker (new Locale( "en"));
 
     private DataGenerator() {
-        private static void sendRequest(RegistrationDto user){
-            given()
-                    .spec(requestSpec)
-                    .body(user)
-                    .when()
-                    .post("/api/system/users")
-                    .then()
-                    .statusCode(200);
-        }
-        public static String getRandomLogin() {
-            String login = faker.name().username();
-            return login;
-        }
-        public static String getRandomPassword() {
-            String password = faker.internet().password();
-            return password;
-        }
+    }
+        
+    private static void sendRequest(RegistrationDto user){
+        given()
+                .spec(requestSpec)
+                .body(user)
+                .when()
+                .post("/api/system/users")
+                .then()
+                .statusCode(200);
+    }
+    public static String getRandomLogin() {
+        String login = faker.name().username();
+        return login;
+    }
+    public static String getRandomPassword() {
+        String password = faker.internet().password();
+        return password;
+    }
 
-        public static class Registration {
-            private Registration() {
-            }
+    public static class Registration {
+        private Registration() {
         }
-
+   
         public static RegistrationDto getUser (String status){
-            user = new RegistrationDto(getRondomLogin(), getRandomPasswordO);
-            var status);
+            var user = new RegistrationDto(getRondomLogin(), getRandomPassword(), status);
             return user;
         }
 
@@ -57,6 +57,7 @@ public class DataGenerator {
             return registeredUser;
         }
     }
+    
     @Value
     public static class RegistrationDto {
 
