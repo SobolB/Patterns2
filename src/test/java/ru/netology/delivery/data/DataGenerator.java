@@ -23,7 +23,7 @@ public class DataGenerator {
 
     private DataGenerator() {
     }
-        
+
     private static void sendRequest(RegistrationDto user){
         given()
                 .spec(requestSpec)
@@ -45,11 +45,12 @@ public class DataGenerator {
     public static class Registration {
         private Registration() {
         }
-   
+
         public static RegistrationDto getUser (String status){
             var user = new RegistrationDto(getRandomLogin(), getRandomPassword(), status);
             return user;
         }
+
 
         public static RegistrationDto getRegisteredUser (String status){
             var registeredUser = getUser(status);
@@ -57,7 +58,7 @@ public class DataGenerator {
             return registeredUser;
         }
     }
-    
+
     @Value
     public static class RegistrationDto {
 
