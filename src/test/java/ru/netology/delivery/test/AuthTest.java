@@ -14,6 +14,7 @@ import ru.netology.delivery.data.DataGenerator;
 
 import static com.codeborne.selenide.Selenide.$;
 import static io.restassured.RestAssured.given;
+import static com.codeborne.selenide.Selenide.open;
 
 public class AuthTest {
 
